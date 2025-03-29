@@ -21,17 +21,29 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-40 w-full transition-all duration-300",
         isScrolled
           ? "bg-background/95 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 relative z-50">
           <Image
             src={`${basePath}/logo.png`}
             alt="Logo"
@@ -82,44 +94,29 @@ export default function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
-          onClick={() => setIsMenuOpen(true)}
+          className="md:hidden relative z-50"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <Menu className="h-6 w-6" />
-          <span className="sr-only">Open menu</span>
+          {isMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
+          <span className="sr-only">
+            {isMenuOpen ? "Close menu" : "Open menu"}
+          </span>
         </Button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - using fixed instead of absolute for better z-index behavior */}
       <div
         className={cn(
-          "fixed inset-0 z-50 bg-background/95 backdrop-blur-sm md:hidden transition-transform duration-300",
+          "fixed inset-0 z-30 bg-background/98 backdrop-blur-md md:hidden transition-transform duration-300 flex flex-col",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src={`${basePath}/logo.png`}
-              alt="Logo"
-              width={140}
-              height={40}
-              className="h-10 w-auto"
-              draggable={false}
-              unoptimized
-            />
-          </Link>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <X className="h-6 w-6" />
-            <span className="sr-only">Close menu</span>
-          </Button>
-        </div>
-
-        <nav className="container mt-8 flex flex-col gap-4">
+        <div className="h-16"></div> {/* Spacer for the header */}
+        <nav className="container mt-8 flex flex-col gap-4 p-4">
           <Link
             href="/"
             className="flex h-12 items-center border-b text-lg font-medium"
