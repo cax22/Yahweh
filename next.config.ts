@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  basePath: process.env.NODE_ENV === "production" ? "/Yahweh" : "", // Repository name
-  assetPrefix: process.env.NODE_ENV === "production" ? "/Yahweh/" : "", // Repository name with trailing slash
+  basePath: process.env.NODE_ENV === "production" ? "/Yahweh" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/Yahweh/" : "",
 };
 
-module.exports = nextConfig;
+export default nextConfig;
