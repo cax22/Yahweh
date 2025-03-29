@@ -2,7 +2,7 @@
   "name": "yehweh",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cax22.github.io/Yahweh",
+  "homepage": "https://cax22.github.io/yahweh",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
