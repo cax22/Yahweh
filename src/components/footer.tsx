@@ -26,8 +26,8 @@ export default function Footer() {
                     863-345-0440
                   </a>{" "}
                   /{" "}
-                  <a href="tel:8638089880" className="hover:text-foreground">
-                    863-808-9880
+                  <a href="tel:3472453160" className="hover:text-foreground">
+                    347-245-3160
                   </a>
                 </span>
               </div>

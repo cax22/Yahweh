@@ -26,10 +26,10 @@ export default function ContactPage() {
                   863-345-0440
                 </a>
                 <a
-                  href="tel:8638089880"
+                  href="tel:3472453160"
                   className="block text-muted-foreground hover:text-foreground"
                 >
-                  863-808-9880
+                  347-245-3160
                 </a>
               </div>
             </div>
