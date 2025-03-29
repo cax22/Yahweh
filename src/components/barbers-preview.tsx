@@ -1,15 +1,7 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { BarberCard } from "@/components/barber-card";
 
 export default function BarbersPreview() {
   const barbers = [
-    {
-      name: "Robin",
-      nickname: "TheBarber",
-      image: "/robin.jpg",
-      bio: "Master barber specializing in classic cuts and fades. Known for attention to detail and client satisfaction.",
-    },
     {
       name: "Ivan",
       nickname: "BlessedHands",
@@ -19,28 +11,25 @@ export default function BarbersPreview() {
   ];
 
   return (
-    <section className="w-full pb-16 md:pb-24">
+    <section className="w-full py-16 md:py-24 bg-muted/20">
       <div className="container px-4">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Meet Our Barbers
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Meet Our Master Barber
             </h2>
-            <p className="mt-2 text-lg text-muted-foreground">
+            <div className="h-1 w-24 bg-primary mx-auto mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
               Skilled professionals dedicated to making you look your best
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="flex justify-center">
             {barbers.map((barber) => (
-              <BarberCard key={barber.name} barber={barber} />
+              <div key={barber.name} className="w-full max-w-md">
+                <BarberCard barber={barber} />
+              </div>
             ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/barbers">View Barber Schedules</Link>
-            </Button>
           </div>
         </div>
       </div>
