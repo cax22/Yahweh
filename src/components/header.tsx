@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,12 +33,13 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/logo.png"
+            src={`${basePath}/logo.png`}
             alt="Logo"
             width={140}
             height={40}
             className="h-10 w-auto"
             draggable={false}
+            unoptimized
           />
         </Link>
 
@@ -98,12 +100,13 @@ export default function Header() {
         <div className="container flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo.png"
+              src={`${basePath}/logo.png`}
               alt="Logo"
               width={140}
               height={40}
               className="h-10 w-auto"
               draggable={false}
+              unoptimized
             />
           </Link>
           <Button

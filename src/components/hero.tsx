@@ -3,16 +3,20 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Hero() {
+  // Add the base path directly in the component
+  const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
+
   return (
     <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <Image
-          src="/fronthead.jpg"
+          src={`${basePath}/fronthead.jpg`}
           alt="Barbershop backdrop"
           fill
           className="object-cover"
           priority
+          unoptimized
         />
       </div>
 

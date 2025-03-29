@@ -3,6 +3,8 @@ import { MapPin, Clock } from "lucide-react";
 import { BusinessHours } from "@/components/business-hours";
 
 export default function AboutPage() {
+  const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
+
   return (
     <main className="container mx-auto px-4 py-12 md:py-16">
       <div className="mx-auto max-w-4xl">
@@ -14,10 +16,11 @@ export default function AboutPage() {
           <div>
             <div className="relative mb-6 aspect-video overflow-hidden rounded-lg">
               <Image
-                src="/fronthead.jpg?height=400&width=400"
+                src={`${basePath}/fronthead.jpg?height=400&width=400`}
                 alt="Yahweh's Touch Barbershop"
                 fill
                 className="object-cover"
+                unoptimized
               />
             </div>
 

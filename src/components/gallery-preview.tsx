@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function GalleryPreview() {
+  const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
+
   const galleryImages = [
-    "/g1.jpg?height=400&width=400",
-    "/g2.jpg?height=400&width=400",
-    "/g3.jpg?height=400&width=400",
-    "/g4.jpg?height=400&width=400",
+    `${basePath}/g1.jpg?height=400&width=400`,
+    `${basePath}/g2.jpg?height=400&width=400`,
+    `${basePath}/g3.jpg?height=400&width=400`,
+    `${basePath}/g4.jpg?height=400&width=400`,
   ];
 
   return (
@@ -30,10 +32,11 @@ export default function GalleryPreview() {
                 <CardContent className="p-0">
                   <div className="relative aspect-square overflow-hidden">
                     <Image
-                      src={image || "/placeholder.svg"}
+                      src={image || `${basePath}/placeholder.svg`}
                       alt={`Gallery image ${index + 1}`}
                       fill
                       className="object-cover transition-transform duration-500 hover:scale-105"
+                      unoptimized
                     />
                   </div>
                 </CardContent>
