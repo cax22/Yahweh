@@ -30,14 +30,6 @@ export default function BarbersPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b">
-                  <td className="p-3 font-medium">Robin (TheBarber)</td>
-                  <td className="p-3 text-center">9AM-6PM</td>
-                  <td className="p-3 text-center">9AM-6PM</td>
-                  <td className="p-3 text-center">9AM-6PM</td>
-                  <td className="p-3 text-center">9AM-7PM</td>
-                  <td className="p-3 text-center">9AM-6PM</td>
-                </tr>
                 <tr>
                   <td className="p-3 font-medium">Ivan (BlessedHands)</td>
                   <td className="p-3 text-center">9AM-6PM</td>
