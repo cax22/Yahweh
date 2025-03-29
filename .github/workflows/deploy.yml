@@ -36,11 +36,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Create .nojekyll file
+      - name: Create .nojekyll file in public directory
         run: touch ./public/.nojekyll
 
       - name: Build with Next.js
         run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Create .nojekyll file in out directory
+        run: touch ./out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
