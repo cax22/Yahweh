@@ -24,7 +24,7 @@ export default function AboutPreview() {
                 width="600"
                 height="600"
                 className="absolute inset-0 h-full w-full border-0"
-                allowFullScreen=""
+                allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Yahweh's Touch Barbershop Location"
