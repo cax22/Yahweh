@@ -60,7 +60,7 @@ export default function Header() {
         <div className="container h-full mx-auto px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src={`${basePath}/logo.png`}
+              src={`${basePath}/logo2.png`}
               alt="Logo"
               width={140}
               height={40}
