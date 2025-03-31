@@ -3,24 +3,24 @@
 import ImageGallery from "@/components/gallery-grid";
 
 export default function GalleryPage() {
-  // Using basePath for GitHub Pages compatibility
-  const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
+  // Remove basePath for custom domain compatibility
+  // const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
 
   // Generate sequential image paths for the main gallery
   // Combining transformationImages and designImages into one array
   const mainGalleryImages = Array.from({ length: 16 }, (_, i) => {
     // First 8 images from transformationImages, next 8 from designImages
     if (i < 8) {
-      return `${basePath}/transformationImages/image${i + 1}.jpg`;
+      return `/transformationImages/image${i + 1}.jpg`;
     } else {
-      return `${basePath}/designImages/image${i - 8 + 1}.jpg`;
+      return `/designImages/image${i - 8 + 1}.jpg`;
     }
   });
 
   // Shop images with sequential naming
   const shopImages = Array.from(
     { length: 3 },
-    (_, i) => `${basePath}/shopImages/image${i + 1}.jpg`
+    (_, i) => `/shopImages/image${i + 1}.jpg`
   );
 
   return (

@@ -2,7 +2,8 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export function BarbersList() {
-  const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
+  // Remove basePath variable
+  // const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
 
   const barbers = [
     {
@@ -20,7 +21,7 @@ export function BarbersList() {
           <div className="grid md:grid-cols-2">
             <div className="relative aspect-square overflow-hidden">
               <Image
-                src={`${basePath}${barber.image}`}
+                src={barber.image}
                 alt={barber.name}
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"
