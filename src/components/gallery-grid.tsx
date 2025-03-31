@@ -54,6 +54,7 @@ export default function ImageGallery({
               alt={`Gallery image ${index + 1}`}
               fill
               className="object-cover transition-transform duration-300 hover:scale-105"
+              unoptimized
             />
           </div>
         ))}
@@ -75,6 +76,7 @@ export default function ImageGallery({
                 alt={`Gallery image ${currentIndex + 1}`}
                 fill
                 className="object-contain"
+                unoptimized
               />
             </div>
 

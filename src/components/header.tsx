@@ -10,7 +10,8 @@ import { cn } from "@/lib/utils";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
+  // Remove basePath variable
+  // const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
 
   // Handle scroll detection
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function Header() {
         <div className="container h-full mx-auto px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src={`${basePath}/logo2.png`}
+              src="/logo2.png"
               alt="Logo"
               width={140}
               height={40}

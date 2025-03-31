@@ -1,13 +1,14 @@
 import { BarberCard } from "@/components/barber-card";
 
 export default function BarbersPreview() {
-  const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
+  // Remove basePath variable
+  // const basePath = process.env.NODE_ENV === "production" ? "/yahweh" : "";
 
   const barbers = [
     {
       name: "Ivan",
       nickname: "BlessedHands",
-      image: `${basePath}/ivan.jpg`,
+      image: "/ivan.jpg", // Direct path without basePath
       bio: "Creative stylist recognized for unique designs and precision work. Creates custom styles tailored to each client.",
     },
   ];
