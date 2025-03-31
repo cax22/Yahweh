@@ -4,8 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === "production" ? "/yahweh" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/yahweh/" : "",
+  // Remove the repository name when using a custom domain
+  basePath: "",
+  assetPrefix: "",
 };
 
 module.exports = nextConfig;
